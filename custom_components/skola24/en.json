@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Skola24",
+        "description": "Choose which Skola24 login domain to use.",
+        "data": {
+          "student_name": "Student name",
+          "entity_id": "Entity ID (without sensor.)",
+          "username": "Username",
+          "password": "Password",
+          "schema_id": "SchemaID",
+          "tenant_url": "Skola24 domain"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not log in to Skola24.",
+      "invalid_entity_id": "Entity ID may only contain a-z, 0-9 and _.",
+      "invalid_time": "Enter a time as HH:MM, for example 18:00.",
+      "invalid_schema_id": "The SchemaID could not be verified with Skola24."
+    },
+    "abort": {
+      "already_configured": "This entity ID is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Skola24 – schedule",
+        "description": "Choose a student from the Skola24 account or enter the child SchemaID. The SchemaID is shown under My settings → My details → My children.",
+        "data": {
+          "student_name": "Student name",
+          "entity_id": "Entity ID (without sensor.)",
+          "week_change_weekday": "Change week on",
+          "week_change_time": "Time",
+          "weeks_ahead": "Future weeks",
+          "update_interval": "Update interval (minutes)",
+          "selected_student": "Student from Skola24 account",
+          "schema_id": "SchemaID",
+          "tenant_url": "Skola24 domain"
+        }
+      }
+    }
+  }
+}
