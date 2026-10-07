@@ -102,3 +102,15 @@ The integration itself does not contain user credentials or personal student Sch
 - Removed an unnecessary hardcoded Eskilstuna host constant.
 - Removed the Eskilstuna-specific fallback used when generating the config-entry unique ID.
 - Updated documentation from the development-oriented 0.6.x README to generic Skola24 documentation.
+
+
+## HACS
+
+This repository is prepared for installation through HACS as a custom integration repository.
+
+1. Open HACS in Home Assistant.
+2. Open the Integrations section.
+3. Use the three-dot menu and choose **Custom repositories**.
+4. Add `Kretiandpleti/skola-24-haos-integration`.
+5. Select **Integration** and install **Skola24 Schema**.
+6. Restart Home Assistant.
