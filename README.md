@@ -114,3 +114,9 @@ This repository is prepared for installation through HACS as a custom integratio
 4. Add `Kretiandpleti/skola-24-haos-integration`.
 5. Select **Integration** and install **Skola24 Schema**.
 6. Restart Home Assistant.
+
+## Example
+
+Example of how a Skola24 schedule can be displayed in Home Assistant:
+
+![Skola24 Schema example](images/skola24-schema-example.png)
