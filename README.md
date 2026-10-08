@@ -27,6 +27,8 @@ The resulting structure should be:
 config/
 └── custom_components/
     └── skola24/
+        ├── brand
+            └── icon.png
         ├── __init__.py
         ├── api.py
         ├── button.py
