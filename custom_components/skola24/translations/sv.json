@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Skola24",
+        "description": "Välj vilken Skola24-inloggning som ska användas.",
+        "data": {
+          "student_name": "Elevnamn",
+          "entity_id": "Entity-ID (utan sensor.)",
+          "username": "Användarnamn",
+          "password": "Lösenord",
+          "schema_id": "SchemaID",
+          "tenant_url": "Skola24-domän"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunde inte logga in på Skola24.",
+      "invalid_entity_id": "Entity-ID får bara innehålla a-z, 0-9 och _.",
+      "invalid_time": "Ange klockslag som HH:MM, till exempel 18:00.",
+      "invalid_schema_id": "SchemaID kunde inte verifieras mot Skola24."
+    },
+    "abort": {
+      "already_configured": "Det här entity-ID:t är redan konfigurerat."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Skola24 – schema",
+        "description": "Välj elev från Skola24-kontot eller ange barnets SchemaID. SchemaID finns under Mina inställningar → Mina uppgifter → Mina barn.",
+        "data": {
+          "entity_id": "Entity-ID (utan sensor.)",
+          "week_change_weekday": "Byt vecka på",
+          "week_change_time": "Klockslag",
+          "weeks_ahead": "Framtida veckor",
+          "update_interval": "Uppdateringsintervall (minuter)",
+          "selected_student": "Elev från Skola24-kontot",
+          "schema_id": "SchemaID",
+          "student_name": "Elevnamn",
+          "tenant_url": "Skola24-domän"
+        }
+      }
+    }
+  }
+}
