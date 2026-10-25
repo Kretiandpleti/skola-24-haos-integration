@@ -10,12 +10,22 @@ A custom Home Assistant integration for retrieving personal schedules from Skola
 - Use a student's **SchemaID** as the stable identifier for the personal schedule.
 - Regenerate the Skola24 signature from SchemaID when fetching a schedule, avoiding stale cached selections.
 - Show the current and upcoming school weeks in Home Assistant.
+- Cache previously fetched weeks to make week navigation significantly faster.
 - Configure the weekday/time used for the automatic week change.
 - Configure how many future weeks are retained.
 - Configure the schedule update interval.
 - Provide buttons for manual schedule refresh and week navigation.
 
 ## Installation
+
+### HACS
+
+1. Open HACS in Home Assistant.
+2. Open the **Integrations** section.
+3. Open the three-dot menu and choose **Custom repositories**.
+4. Add `Kretiandpleti/skola-24-haos-integration`.
+5. Select **Integration** and install **Skola24 Schema**.
+6. Restart Home Assistant.
 
 ### Manual
 
@@ -27,8 +37,8 @@ The resulting structure should be:
 config/
 └── custom_components/
     └── skola24/
-        ├── brand
-            └── icon.png
+        ├── brand/
+        │   └── icon.png
         ├── __init__.py
         ├── api.py
         ├── button.py
@@ -65,7 +75,7 @@ A SchemaID can be found in Skola24 under:
 
 **Mina inställningar → Mina uppgifter → Mina barn**
 
-If automatic discovery does not work, the SchemaID can be entered manually.
+If automatic discovery does not work, the SchemaID can be entered manually. If you only have one child and the integration discovers the student automatically, you may not need to enter the SchemaID manually.
 
 ## Options
 
@@ -77,6 +87,8 @@ The integration options allow you to configure:
 - Day and time for automatic week changes
 - Number of future weeks
 - Update interval
+
+Previously fetched weeks are cached in memory to speed up navigation. A Home Assistant restart clears this cache.
 
 ## Entity examples
 
@@ -97,25 +109,26 @@ Credentials are stored in the Home Assistant config entry. Do not commit your Ho
 
 The integration itself does not contain user credentials or personal student SchemaIDs.
 
-## Version 0.6.4
+## Version history
+
+### Version 0.6.9
+
+- Added in-memory caching for previously fetched school weeks.
+- Improved week navigation by fetching only the selected week when it is not cached.
+- Preserved scheduled updates and existing sensor data.
+
+### Version 0.6.8
+
+- Improved schedule retrieval and handling of weeks without lessons, such as school holidays.
+- Improved handling of invalid SchemaID errors.
+
+### Version 0.6.4
 
 - Prepared the integration for public repository use.
 - Corrected the manifest version to `0.6.4`.
 - Removed an unnecessary hardcoded Eskilstuna host constant.
 - Removed the Eskilstuna-specific fallback used when generating the config-entry unique ID.
 - Updated documentation from the development-oriented 0.6.x README to generic Skola24 documentation.
-
-
-## HACS
-
-This repository is prepared for installation through HACS as a custom integration repository.
-
-1. Open HACS in Home Assistant.
-2. Open the Integrations section.
-3. Use the three-dot menu and choose **Custom repositories**.
-4. Add `Kretiandpleti/skola-24-haos-integration`.
-5. Select **Integration** and install **Skola24 Schema**.
-6. Restart Home Assistant.
 
 ## Example
 
